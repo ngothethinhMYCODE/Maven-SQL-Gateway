@@ -22,12 +22,12 @@ FROM tomcat:11.0-jdk21-temurin
 # Remove default Tomcat applications
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy our WAR into Tomcat
+# Copy our WAR into ROOT
 COPY --from=build /app/target/Maven-SQL-Gateway.war \
     /usr/local/tomcat/webapps/ROOT.war
 
-# Render uses PORT environment variable.
-# Tomcat listens on 8080 inside the container.
-EXPOSE 8080
+# Render default web port
+EXPOSE 10000
 
-CMD ["catalina.sh", "run"]
+# Make Tomcat listen on Render's PORT
+CMD ["sh", "-c", "sed -i 's/port=\"8080\"/port=\"${PORT:-10000}\"/' /usr/local/tomcat/conf/server.xml && catalina.sh run"]
