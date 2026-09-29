@@ -54,10 +54,16 @@
         <!-- EclipseLink JPA                   -->
         <!-- ================================= -->
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>4.0.8</version>
-        </dependency>
+		    <groupId>org.eclipse.persistence</groupId>
+		    <artifactId>eclipselink</artifactId>
+		    <version>4.0.8</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.persistence</groupId>
+		    <artifactId>org.eclipse.persistence.jpa</artifactId>
+		    <version>4.0.8</version>
+		</dependency>
 
         <!-- ================================= -->
         <!-- PostgreSQL JDBC Driver            -->
