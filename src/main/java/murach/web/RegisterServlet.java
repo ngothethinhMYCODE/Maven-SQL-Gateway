@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import murach.business.User;
-import murach.util.MailUtilGmail;
+import murach.util.MailUtilResend;
 import murach.util.UserDAO;
 
 @WebServlet("/RegisterServlet")
@@ -59,7 +59,7 @@ public class RegisterServlet extends HttpServlet {
         // 5. Send email
         try {
 
-            MailUtilGmail.sendMail(
+        	MailUtilResend.sendMail(
                     to,
                     from,
                     subject,

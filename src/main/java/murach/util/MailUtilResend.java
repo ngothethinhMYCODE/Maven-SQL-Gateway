@@ -13,7 +13,6 @@ public class MailUtilResend {
             boolean bodyIsHTML)
             throws Exception {
 
-        // Get API key from environment variable
         String apiKey = System.getenv("RESEND_API_KEY");
 
         if (apiKey == null || apiKey.isBlank()) {
@@ -22,10 +21,8 @@ public class MailUtilResend {
             );
         }
 
-       
         Resend resend = new Resend(apiKey);
 
-      
         CreateEmailOptions params = CreateEmailOptions.builder()
                 .from("onboarding@resend.dev")
                 .to(to)
@@ -33,7 +30,6 @@ public class MailUtilResend {
                 .text(body)
                 .build();
 
-        // Send email
         resend.emails().send(params);
     }
 }
