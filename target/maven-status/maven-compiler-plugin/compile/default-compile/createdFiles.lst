@@ -1,0 +1,8 @@
+murach\util\UserDAO.class
+murach\business\User.class
+murach\util\TestJPA.class
+murach\util\MailUtilLocal.class
+murach\util\MailUtilGmail.class
+murach\util\MailUtilResend.class
+murach\util\JPAUtil.class
+murach\web\RegisterServlet.class
