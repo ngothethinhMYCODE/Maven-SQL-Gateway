@@ -1,43 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<properties>
 
-<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="
-                https://jakarta.ee/xml/ns/persistence
-                https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
-             version="3.1">
+    <property name="jakarta.persistence.jdbc.driver"
+              value="org.postgresql.Driver"/>
 
-    <persistence-unit name="sqlGatewayPU"
-                      transaction-type="RESOURCE_LOCAL">
+    <property name="jakarta.persistence.jdbc.url"
+              value="jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}"/>
 
-        <provider>
-            org.eclipse.persistence.jpa.PersistenceProvider
-        </provider>
+    <property name="jakarta.persistence.jdbc.user"
+              value="${DB_USER}"/>
 
-        <class>murach.business.User</class>
+    <property name="jakarta.persistence.jdbc.password"
+              value="${DB_PASSWORD}"/>
 
-        <properties>
+    <property name="eclipselink.logging.level"
+              value="FINE"/>
 
-            <property name="jakarta.persistence.jdbc.driver"
-                      value="org.postgresql.Driver"/>
+    <property name="eclipselink.ddl-generation"
+              value="none"/>
 
-            <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5432/sql_gateway"/>
-
-            <property name="jakarta.persistence.jdbc.user"
-                      value="postgres"/>
-
-            <property name="jakarta.persistence.jdbc.password"
-                      value="Phucnguyen123@"/>
-
-            <property name="eclipselink.logging.level"
-                      value="FINE"/>
-
-            <property name="eclipselink.ddl-generation"
-                      value="none"/>
-
-        </properties>
-
-    </persistence-unit>
-
-</persistence>
+</properties>
