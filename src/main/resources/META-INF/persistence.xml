@@ -4,13 +4,13 @@
               value="org.postgresql.Driver"/>
 
     <property name="jakarta.persistence.jdbc.url"
-              value="jdbc:postgresql://sqlgateway:ZXzAyE7o8jbKqH4LDYaJDg19MSkfs6h0@dpg-datr5a893c1s73bn89pg-a/sql_gateway"/>
+              value="jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}"/>
 
     <property name="jakarta.persistence.jdbc.user"
-              value="$sqlgateway"/>
+              value="${DB_USER}"/>
 
     <property name="jakarta.persistence.jdbc.password"
-              value="$ZXzAyE7o8jbKqH4LDYaJDg19MSkfs6h0"/>
+              value="${DB_PASSWORD}"/>
 
     <property name="eclipselink.logging.level"
               value="FINE"/>
